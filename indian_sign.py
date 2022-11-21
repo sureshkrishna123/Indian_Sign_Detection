@@ -79,7 +79,7 @@ if app_mode=='Indian Sign Language':
 
   if button_translate and image_file :
 
-    model = load_model('/content/demo_model.h5')
+    model = load_model('indian_sign.h5')
     demo_image_path = image_file
     img = tf.keras.utils.load_img(demo_image_path, target_size=(img_height, img_width))
     img_array = tf.keras.utils.img_to_array(img)

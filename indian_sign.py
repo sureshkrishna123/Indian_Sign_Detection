@@ -10,7 +10,7 @@ import numpy as np
 from keras.models import load_model
 
 st.set_page_config(layout="wide")
-st.sidebar.image('images/Azure_Image.png', width=300)
+#st.sidebar.image('images/Azure_Image.png', width=300)
 st.sidebar.header('A website for classifying Indian Sign Language')
 st.sidebar.markdown('Used CNN algorithm')
 
@@ -27,7 +27,7 @@ st.sidebar.markdown('---')
 st.sidebar.write('N.V.Suresh Krishna | sureshkrishnanv24@gmail.com https://github.com/sureshkrishna123')
 
 if app_mode =='About Me':
-    st.image('images/wp4498220.jpg', use_column_width=True)
+    #st.image('images/wp4498220.jpg', use_column_width=True)
     st.markdown('''
               # About Me \n 
                 Hey this is ** N.V.Suresh Krishna **. \n
@@ -44,7 +44,7 @@ if app_mode =='About Me':
                
 
 if app_mode=='Indian Sign Language':
-  st.image(os.path.join('./images','facial-recognition-software-image.jpg'),use_column_width=True )
+  #st.image(os.path.join('./images','facial-recognition-software-image.jpg'),use_column_width=True )
   st.title("Final year project")
   st.header('Indian Sign Language Classification')
   st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")

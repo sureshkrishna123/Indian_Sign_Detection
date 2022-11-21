@@ -1,13 +1,4 @@
-import streamlit as st
-import tensorflow as tf
-from keras.models import load_model
-from keras.utils import load_img
-from keras.utils import img_to_array
-from keras.applications.vgg16 import preprocess_input
-from keras.applications.vgg16 import decode_predictions
-from keras.applications.vgg16 import VGG16
-import numpy as np
-from keras.models import load_model
+
 
 st.set_page_config(layout="wide")
 st.sidebar.image('images/Azure_Image.png', width=300)
@@ -70,5 +61,5 @@ if app_mode=='Indian Sign Language':
     img_array = tf.expand_dims(img_array, 0) # Create a batch
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
-    st.text("This image most likely belongs to "+class_names[np.argmax(score)]))
+    st.text("This image most likely belongs to "+class_names[np.argmax(score)])
     

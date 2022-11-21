@@ -60,8 +60,9 @@ if app_mode =='About Me':
                
 
 if app_mode=='Indian Sign Language':
-  st.image('ind.png'),use_column_width=True )
+  #st.image('ind.png'),use_column_width=True )
   st.title("Final year project")
+  st.image('ind.png')
   st.header('Indian Sign Language Detection')
   st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
   st.text("")

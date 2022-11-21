@@ -80,13 +80,13 @@ if app_mode=='Indian Sign Language':
   if button_translate and image_file :
     img_height,img_width=180,180
     model = load_model('indian_sign.h5')
-    #class_names = train_ds.class_names
+    class_names =model.class_names
     demo_image_path = image_file
     img = tf.keras.utils.load_img(demo_image_path, target_size=(img_height, img_width))
     img_array = tf.keras.utils.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0) # Create a batch
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
-    st.text(class_names)#[np.argmax(score)])
+    st.text(class_names[np.argmax(score)])
    
     

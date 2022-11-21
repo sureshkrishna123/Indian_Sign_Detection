@@ -88,6 +88,7 @@ if app_mode=='Indian Sign Language':
     img_array = tf.expand_dims(img_array, 0) # Create a batch
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
+    st.text("The hand sign of the above image is : ")
     st.subheader(class_names[np.argmax(score)])
    
     

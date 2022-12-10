@@ -15,7 +15,7 @@ from PIL import Image
 from PIL import ImageDraw
 import json
 import streamlit as st
-#import tensorflow as tf
+import tensorflow as tf
 from keras.models import load_model
 from keras.utils import load_img
 from keras.utils import img_to_array

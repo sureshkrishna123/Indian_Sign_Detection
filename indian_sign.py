@@ -91,9 +91,8 @@ if app_mode=='Indian Sign Language':
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
     st.text("The hand sign of the above image is : ")
-    ans=st.subheader(class_names[np.argmax(score)])
+    st.subheader(class_names[np.argmax(score)])
     word=class_names[np.argmax(score)]
-    st.text(ans)
     sound_file = BytesIO()
     tts = gTTS(word)
     tts.write_to_fp(sound_file)

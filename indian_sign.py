@@ -154,4 +154,4 @@ if app_mode=='Text to Image':
   if button_translate and letter :
         out_path="data/"+letter+"/0.jpg"
         image = Image.open(out_path)
-        st.image(image, caption=letter,use_column_width='auto',width=100)
+        st.image(image, caption=letter,width=100)

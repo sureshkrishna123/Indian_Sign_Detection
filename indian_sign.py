@@ -147,11 +147,11 @@ if app_mode=='Text to Image':
   st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
   st.text("")
   letter=st.text_input("enter the letter")  
- 
+    
 
   button_translate=st.button('Click me',help='To give the image')
 
   if button_translate and letter :
-        out_path=train_data_dir+"/"+letter+"/7.jpg"
+        out_path="data/"+letter+"/0.jpg"
         image = Image.open(out_path)
         st.image(image, caption=letter)

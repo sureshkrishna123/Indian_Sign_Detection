@@ -60,7 +60,7 @@ if app_mode =='About Me':
                 ''')
                
 
-if app_mode=='Indian Sign Language':
+if app_mode=='Image to Text':
   #st.image('ind.png'),use_column_width=True )
   st.title("Final year project")
   st.image('ind.png')
@@ -92,6 +92,46 @@ if app_mode=='Indian Sign Language':
     score = tf.nn.softmax(predictions[0])
     st.text("The hand sign of the above image is : ")
     st.subheader(class_names[np.argmax(score)])
+    #word=class_names[np.argmax(score)]
+    #sound_file = BytesIO()
+    #tts = gTTS(word)
+    #tts.write_to_fp(sound_file)
+    #st.audio(sound_file)
+
+    
+    
+if app_mode=='Image to Speech':
+  #st.image('ind.png'),use_column_width=True )
+  st.title("Final year project")
+  st.image('ind.png')
+  st.header('Indian Sign Language Detection')
+  st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
+  st.text("")
+  
+  image_file =  st.file_uploader("Upload Images (less than 1mb)", type=["png","jpg","jpeg"])
+  if image_file is not None:
+    img = Image.open(image_file)
+    st.image(image_file,width=250,caption='Uploaded image')
+    byte_io = BytesIO()
+    img.save(byte_io, 'PNG')#PNG
+    image = byte_io.getvalue()
+
+
+  button_translate=st.button('Click me',help='To give the image')
+
+  if button_translate and image_file :
+    class_names= ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    img_height,img_width=180,180
+    model = load_model('indian_sign.h5')
+    #class_names = model.class_names
+    demo_image_path = image_file
+    img = tf.keras.utils.load_img(demo_image_path, target_size=(img_height, img_width))
+    img_array = tf.keras.utils.img_to_array(img)
+    img_array = tf.expand_dims(img_array, 0) # Create a batch
+    predictions = model.predict(img_array)
+    score = tf.nn.softmax(predictions[0])
+    st.text("The hand sign of the above image is : ")
+    #st.subheader(class_names[np.argmax(score)])
     word=class_names[np.argmax(score)]
     sound_file = BytesIO()
     tts = gTTS(word)

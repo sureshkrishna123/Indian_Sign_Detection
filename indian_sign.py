@@ -94,14 +94,10 @@ if app_mode=='Indian Sign Language':
     ans=st.subheader(class_names[np.argmax(score)])
     word=class_names[np.argmax(score)]
     st.text(ans)
-    #sound_file = BytesIO()
-    #tts = gTTS(word)
-    #tts.write_to_fp(sound_file)
-    #st.audio(sound_file)
-    audio_file = open(f"{word}.mp3", "rb")
-    audio_bytes = audio_file.read()
-    st.markdown(f"## Your audio:")
-    st.audio(audio_bytes, format="audio/mp3", start_time=0)
-
+    sound_file = BytesIO()
+    tts = gTTS(word)
+    tts.write_to_fp(sound_file)
+    st.audio(sound_file)
+    
    
     

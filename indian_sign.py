@@ -98,7 +98,7 @@ if app_mode=='Indian Sign Language':
     #tts = gTTS(word)
     #tts.write_to_fp(sound_file)
     #st.audio(sound_file)
-    audio_file = open(f"temp/{word}.mp3", "rb")
+    audio_file = open(f"{word}.mp3", "rb")
     audio_bytes = audio_file.read()
     st.markdown(f"## Your audio:")
     st.audio(audio_bytes, format="audio/mp3", start_time=0)

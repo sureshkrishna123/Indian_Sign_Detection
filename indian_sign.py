@@ -34,7 +34,7 @@ st.sidebar.markdown('Used CNN algorithm')
 
 app_mode = st.sidebar.radio(
     "",
-    ("About Me","Indian Sign Language"),
+    ("About Me","Image to Text","Image to Speech"),
 )
 
 

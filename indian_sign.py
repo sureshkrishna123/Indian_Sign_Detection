@@ -152,6 +152,6 @@ if app_mode=='Text to Image':
   button_translate=st.button('Click me',help='To give the image')
 
   if button_translate and letter :
-        out_path="train_data_dir/"+letter+"/7.jpg"
+        out_path=train_data_dir"/"+letter+"/7.jpg"
         image = Image.open(out_path)
         st.image(image, caption=letter)

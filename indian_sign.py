@@ -105,7 +105,7 @@ if app_mode=='Image to Speech':
   st.title("Final year project")
   st.image('ind.png')
   st.header('Indian Sign Language Detection')
-  st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
+  st.markdown("Using CNN algorithm and googletrans, the hand sign images are classified and gives the audio as an output.")
   st.text("")
   
   image_file =  st.file_uploader("Upload Images (less than 1mb)", type=["png","jpg","jpeg"])
@@ -138,5 +138,20 @@ if app_mode=='Image to Speech':
     tts.write_to_fp(sound_file)
     st.audio(sound_file)
     
-   
-    
+  
+if app_mode=='Text to Image':
+  #st.image('ind.png'),use_column_width=True )
+  st.title("Final year project")
+  st.image('ind.png')
+  st.header('Indian Sign Language Detection')
+  st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
+  st.text("")
+  letter=st.text_input()  
+ 
+
+  button_translate=st.button('Click me',help='To give the image')
+
+  if button_translate and letter :
+        out_path="train_data_dir/"+letter+"/7.jpg"
+        image = Image.open(out_path)
+        st.image(image, caption=letter)

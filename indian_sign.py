@@ -92,9 +92,10 @@ if app_mode=='Indian Sign Language':
     score = tf.nn.softmax(predictions[0])
     st.text("The hand sign of the above image is : ")
     ans=st.subheader(class_names[np.argmax(score)])
+    word=ans
     st.text(ans)
     sound_file = BytesIO()
-    tts = gTTS('hello', lang='en')
+    tts = gTTS(word, lang='en')
     tts.write_to_fp(sound_file)
     st.audio(sound_file)
    

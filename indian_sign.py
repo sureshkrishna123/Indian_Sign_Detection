@@ -95,7 +95,7 @@ if app_mode=='Indian Sign Language':
     word=ans
     st.text(ans)
     sound_file = BytesIO()
-    tts = gtts(word)
+    tts = gTTS(word)
     tts.write_to_fp(sound_file)
     st.audio(sound_file)
    

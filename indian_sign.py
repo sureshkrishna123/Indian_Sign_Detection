@@ -95,7 +95,7 @@ if app_mode=='Indian Sign Language':
     word=ans
     st.text(ans)
     sound_file = BytesIO()
-    tts = gtts-cli ans# --output h.mp3
+    tts = gtts('hello world',lang="en")
     tts.write_to_fp(sound_file)
     st.audio(sound_file)
    

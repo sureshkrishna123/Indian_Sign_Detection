@@ -8,6 +8,7 @@ import uuid
 import requests
 from urllib.parse import urlparse
 from io import BytesIO
+from gtts import gTTS
 # To install this module, run:
 # python -m pip install Pillow
 from io import BytesIO
@@ -90,6 +91,11 @@ if app_mode=='Indian Sign Language':
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
     st.text("The hand sign of the above image is : ")
-    st.subheader(class_names[np.argmax(score)])
+    ans=st.subheader(class_names[np.argmax(score)])
+    st.text(ans)
+    sound_file = BytesIO()
+    tts = gTTS('Add text-to-speech to your app', lang='en')
+    tts.write_to_fp(sound_file)
+    st.audio(sound_file)
    
     

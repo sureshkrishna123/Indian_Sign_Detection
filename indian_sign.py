@@ -94,7 +94,7 @@ if app_mode=='Indian Sign Language':
     ans=st.subheader(class_names[np.argmax(score)])
     st.text(ans)
     sound_file = BytesIO()
-    tts = gTTS(ans, lang='en')
+    tts = gTTS('hello', lang='en')
     tts.write_to_fp(sound_file)
     st.audio(sound_file)
    

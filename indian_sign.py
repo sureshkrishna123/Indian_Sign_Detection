@@ -146,7 +146,7 @@ if app_mode=='Text to Image':
   st.header('Indian Sign Language Detection')
   st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
   st.text("")
-  letter=st.text_input()  
+  letter=st.text_input("enter the letter")  
  
 
   button_translate=st.button('Click me',help='To give the image')

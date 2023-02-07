@@ -34,7 +34,7 @@ st.sidebar.markdown('Used CNN algorithm')
 
 app_mode = st.sidebar.radio(
     "",
-    ("About Me","Image to Text","Image to Speech","Text to Image"),
+    ("About Me","Image to Text","Image to Speech","Text to Image","camera"),
 )
 
 
@@ -79,7 +79,7 @@ if app_mode=='Image to Text':
 
   button_translate=st.button('Click me',help='To give the image')
 
-  if button_translate and image_file :
+  if (button_translate and image_file) or (button_translate and img_input)  :
     class_names= ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     img_height,img_width=180,180
     model = load_model('indian_sign.h5')
@@ -155,3 +155,13 @@ if app_mode=='Text to Image':
         out_path="data/"+letter+"/0.jpg"
         image = Image.open(out_path)
         st.image(image, caption=letter,width=300)
+
+        
+        
+if app_mode=='camera':
+    picture = st.camera_input("Take a picture")
+
+    if picture:
+        st.image(picture)
+    
+  

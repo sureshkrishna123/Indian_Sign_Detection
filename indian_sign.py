@@ -163,11 +163,11 @@ if app_mode=='camera':
     if camera:
       image_file = st.camera_input("Take a picture")
       if image_file is not None:
-        img = Image.open(image_file)
+        #img = Image.open(image_file)
         st.image(image_file,width=250,caption='Uploaded image')
-        byte_io = BytesIO()
-        img.save(byte_io, 'PNG')#PNG
-        image = byte_io.getvalue()
+        #byte_io = BytesIO()
+        #img.save(byte_io, 'PNG')#PNG
+        #image = byte_io.getvalue()
 
 
       button_translate=st.button('Click me',help='To give the image')

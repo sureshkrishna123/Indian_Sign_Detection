@@ -75,11 +75,11 @@ if app_mode=='Image to Text':
     if picture:
         image=st.image(picture)
     if image is not None:
-    img = Image.open(image)
-    st.image(image,width=250,caption='Uploaded image')
-    byte_io = BytesIO()
-    img.save(byte_io, 'PNG')#PNG
-    image = byte_io.getvalue()
+      img = Image.open(image)
+      st.image(image,width=250,caption='Uploaded image')
+      byte_io = BytesIO()
+      img.save(byte_io, 'PNG')#PNG
+      image = byte_io.getvalue()
     
   image_file =  st.file_uploader("Upload Images (less than 1mb)", type=["png","jpg","jpeg"])
   if image_file is not None:
@@ -169,13 +169,3 @@ if app_mode=='Text to Image':
         out_path="data/"+letter+"/0.jpg"
         image = Image.open(out_path)
         st.image(image, caption=letter,width=300)
-
-        
-        
-if app_mode=='camera':
-    picture = st.camera_input("Take a picture")
-
-    if picture:
-        st.image(picture)
-    
-  

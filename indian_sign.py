@@ -158,6 +158,7 @@ if app_mode=='Text to Image':
         image = Image.open(out_path)
         st.image(image, caption=letter,width=300)
      
+
 if app_mode=='camera':
     camera=st.button('Give camera input',help='To give the image input')
     if camera:

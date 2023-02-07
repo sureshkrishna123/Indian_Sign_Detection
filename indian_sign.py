@@ -93,7 +93,7 @@ if app_mode=='Image to Text':
   button_translate=st.button('Click me',help='To give the image')
   
   
-  if (button_translate and image_file) or (camera and image_file)  :
+  if (button_translate and image_file) or (button_translate and image_file)  :
     class_names= ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     img_height,img_width=180,180
     model = load_model('indian_sign.h5')

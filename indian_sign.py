@@ -68,18 +68,6 @@ if app_mode=='Image to Text':
   st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
   st.text("")
  
-  camera=st.button('Give camera input',help='To give the image input')
-  if camera:
-    image_file = st.camera_input("Take a picture")
-
-    if image_file:
-        image=st.image(picture)
-        if image is not None:
-            img = Image.open(image)
-            st.image(image,width=250,caption='Uploaded image')
-            byte_io = BytesIO()
-            img.save(byte_io, 'PNG')#PNG
-            image = byte_io.getvalue()
     
   image_file =  st.file_uploader("Upload Images (less than 1mb)", type=["png","jpg","jpeg"])
   if image_file is not None:

@@ -174,7 +174,9 @@ if app_mode=='camera':
     if app_mode=='camera':
       camera=st.button('Give camera input',help='To give the image input')
     if camera:
-      image_file = st.camera_input("Take a picture")
+      image= st.camera_input("Take a picture")
+    if image:
+        image_file=st.image(image)
     if image_file is not None:
       img = Image.open(image_file)
       st.image(image_file,width=250,caption='Uploaded image')

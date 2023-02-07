@@ -67,7 +67,20 @@ if app_mode=='Image to Text':
   st.header('Indian Sign Language Detection')
   st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
   st.text("")
-  
+ 
+  camera=st.button('Give camera input',help='To give the image input')
+  if camera:
+    picture = st.camera_input("Take a picture")
+
+    if picture:
+        image=st.image(picture)
+    if image is not None:
+    img = Image.open(image)
+    st.image(image,width=250,caption='Uploaded image')
+    byte_io = BytesIO()
+    img.save(byte_io, 'PNG')#PNG
+    image = byte_io.getvalue()
+    
   image_file =  st.file_uploader("Upload Images (less than 1mb)", type=["png","jpg","jpeg"])
   if image_file is not None:
     img = Image.open(image_file)
@@ -78,8 +91,9 @@ if app_mode=='Image to Text':
 
 
   button_translate=st.button('Click me',help='To give the image')
-
-  if (button_translate and image_file) or (button_translate and img_input)  :
+  
+  
+  if (button_translate and image_file) or (camera and picture)  :
     class_names= ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     img_height,img_width=180,180
     model = load_model('indian_sign.h5')

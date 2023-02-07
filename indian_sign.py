@@ -161,11 +161,13 @@ if app_mode=='Text to Image':
 
 
 if app_mode=='camera':
-    
+    cam_button=st.button('Click me',help='To give the image')
+    if cam_button:
+      
       image_file = st.camera_input("Take a picture")
       if image_file:
         img = Image.open(image_file)
-        st.image(image_file,width=250,caption='Uploaded image')
+      st.image(image_file,width=250,caption='Uploaded image')
         
 
       button_translate=st.button('Click me',help='To give the image')

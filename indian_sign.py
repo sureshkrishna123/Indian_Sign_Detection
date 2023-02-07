@@ -34,7 +34,7 @@ st.sidebar.markdown('Used CNN algorithm')
 
 app_mode = st.sidebar.radio(
     "",
-    ("About Me","Image to Text","Image to Speech","Text to Image","camera"),
+    ("About Me","Image to Text","Image to Speech","Text to Image","camera input"),
 )
 
 
@@ -160,14 +160,12 @@ if app_mode=='Text to Image':
      
 
 
-if app_mode=='camera':
-    cam_button=st.button('Click me',help='To give the image')
-    if cam_button:
+if app_mode=='camera input':
       
       image_file = st.camera_input("Take a picture")
       if image_file:
         img = Image.open(image_file)
-      st.image(image_file,width=250,caption='Uploaded image')
+        st.image(image_file,width=250,caption='Uploaded image')
         
 
       button_translate=st.button('Click me',help='To give the image')

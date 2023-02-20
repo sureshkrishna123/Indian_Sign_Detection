@@ -95,7 +95,7 @@ if app_mode=='Image to Text':
     st.text("The hand sign of the above image is : ")
     #st.subheader(class_names[np.argmax(score)])
     word=class_names[np.argmax(score)]
-    st.text("The hand sign of the above image is : ")
+
     st.subheader(word)
 
 

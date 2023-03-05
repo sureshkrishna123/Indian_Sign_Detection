@@ -6,7 +6,7 @@ gtts
 opencv-python
 mediapipe
 argparse
-copy
+
 csv
 itertools
 collections

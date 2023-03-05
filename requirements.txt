@@ -8,5 +8,5 @@ mediapipe
 argparse
 
 
-itertools
+
 collections

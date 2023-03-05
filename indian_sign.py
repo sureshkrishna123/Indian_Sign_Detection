@@ -25,6 +25,7 @@ from keras.applications.vgg16 import decode_predictions
 from keras.applications.vgg16 import VGG16
 import numpy as np
 from keras.models import load_model
+from cv_zone import main
 
 st.set_page_config(layout="wide")
 #st.sidebar.image('images/Azure_Image.png', width=300)
@@ -176,18 +177,10 @@ if app_mode=='camera input':
   
   
       if (button_translate and image_file):
-        class_names= ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-        img_height,img_width=180,180
-        model = load_model('indian_sign.h5')
-      #class_names = model.class_names
-        demo_image_path = image_file
-        img = tf.keras.utils.load_img(demo_image_path, target_size=(img_height, img_width))
-        img_array = tf.keras.utils.img_to_array(img)
-        img_array = tf.expand_dims(img_array, 0) # Create a batch
-        predictions = model.predict(img_array)
-        score = tf.nn.softmax(predictions[0])
+        st.image(main(img))
+        
         st.text("The hand sign of the above image is : ")
-        st.subheader(class_names[np.argmax(score)])
+
     #word=class_names[np.argmax(score)]
     #sound_file = BytesIO()
     #tts = gTTS(word)

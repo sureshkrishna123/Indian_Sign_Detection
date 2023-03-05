@@ -7,6 +7,6 @@ opencv-python
 mediapipe
 argparse
 
-csv
+
 itertools
 collections

@@ -5,3 +5,8 @@ numpy
 gtts
 cv2
 mediapipe
+argparse
+copy
+csv
+itertools
+collections

@@ -26,7 +26,6 @@ from keras.applications.vgg16 import VGG16
 import numpy as np
 from keras.models import load_model
 sys.path.append('mediapipe')
-import cv_zone
 from cv_zone import main
 
 st.set_page_config(layout="wide")

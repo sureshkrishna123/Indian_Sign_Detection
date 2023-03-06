@@ -25,7 +25,7 @@ from keras.applications.vgg16 import decode_predictions
 from keras.applications.vgg16 import VGG16
 import numpy as np
 from keras.models import load_model
-from cv_zone import main
+from mediapipe/cv_zone import main
 
 st.set_page_config(layout="wide")
 #st.sidebar.image('images/Azure_Image.png', width=300)

@@ -25,7 +25,8 @@ from keras.applications.vgg16 import decode_predictions
 from keras.applications.vgg16 import VGG16
 import numpy as np
 from keras.models import load_model
-sys.path.append('mediapipe')
+sys.path.append('ndian_Sign_Detection/mediapipe/')
+import cv_zone
 from cv_zone import main
 
 st.set_page_config(layout="wide")

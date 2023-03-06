@@ -25,7 +25,7 @@ from keras.applications.vgg16 import decode_predictions
 from keras.applications.vgg16 import VGG16
 import numpy as np
 from keras.models import load_model
-from mediapipe import cv_zone
+from cv_zone import main
 
 st.set_page_config(layout="wide")
 #st.sidebar.image('images/Azure_Image.png', width=300)
@@ -177,7 +177,7 @@ if app_mode=='camera input':
   
   
       if (button_translate and image_file):
-        st.image(cv_zone(img))
+        st.image(main(img))
         
         st.text("The hand sign of the above image is : ")
 

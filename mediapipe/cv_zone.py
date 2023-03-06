@@ -542,5 +542,4 @@ def draw_info(image, fps, mode, number):
 
 
 if __name__ == '__main__':
-    hand_image='1.jpg'
     main(hand_image)

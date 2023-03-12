@@ -26,8 +26,8 @@ from keras.applications.vgg16 import VGG16
 import numpy as np
 from keras.models import load_model
 sys.path.append('ndian_Sign_Detection/mediapipe/')
-import cv_zone
-from cv_zone import main
+import cv2
+import mediapipe
 
 st.set_page_config(layout="wide")
 #st.sidebar.image('images/Azure_Image.png', width=300)

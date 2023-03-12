@@ -25,9 +25,7 @@ from keras.applications.vgg16 import decode_predictions
 from keras.applications.vgg16 import VGG16
 import numpy as np
 from keras.models import load_model
-sys.path.append('ndian_Sign_Detection/mediapipe/')
-import cv2
-import mediapipe
+
 
 st.set_page_config(layout="wide")
 #st.sidebar.image('images/Azure_Image.png', width=300)
@@ -37,7 +35,7 @@ st.sidebar.markdown('Used CNN algorithm')
 
 app_mode = st.sidebar.radio(
     "",
-    ("About Me","Image to Text","Image to Speech","Text to Image","camera input"),
+    ("About Me","Image to Text","Image to Speech","Text to Image"),
 )
 
 
@@ -166,27 +164,5 @@ if app_mode=='Text to Image':
         st.image(image, caption=letter,width=300)
      
 
-
-if app_mode=='camera input':
-      
-      image_file = st.camera_input("Take a picture")
-      if image_file:
-        img = Image.open(image_file)
-        st.image(image_file,width=250,caption='Uploaded image')
-        
-
-      button_translate=st.button('Click me',help='To give the image')
-  
-  
-      if (button_translate and image_file):
-        st.image(main(img))
-        
-        st.text("The hand sign of the above image is : ")
-
-    #word=class_names[np.argmax(score)]
-    #sound_file = BytesIO()
-    #tts = gTTS(word)
-    #tts.write_to_fp(sound_file)
-    #st.audio(sound_file)
 
      

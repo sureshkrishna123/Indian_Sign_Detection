@@ -131,6 +131,16 @@ if app_mode=='Image to Speech':
     byte_io = BytesIO()
     img.save(byte_io, 'PNG')#PNG
     image = byte_io.getvalue()
+  
+  if image_file is None:
+    image_file="data/1/101.jpg"  
+    st.text("Demo image")
+    img = Image.open(image_file)
+    st.image(image_file,width=250,caption='Uploaded image')
+    byte_io = BytesIO()
+    img.save(byte_io, 'PNG')#PNG
+    image = byte_io.getvalue()
+  
 
 
   button_translate=st.button('Click me',help='To give the image')

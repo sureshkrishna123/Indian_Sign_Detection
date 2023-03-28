@@ -69,11 +69,10 @@ if app_mode=='Image to Text':
   st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
   st.text("")
  
-    
+  image_file="data/A/101.jpg"  
   image_file =  st.file_uploader("Upload Images (less than 1mb)", type=["png","jpg","jpeg"])
-  image_file="data/A/101.jpg"
+  
   st.text("demo image")
-  st.image(image_file)
   if image_file is not None:
     img = Image.open(image_file)
     st.image(image_file,width=250,caption='Uploaded image')

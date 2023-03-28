@@ -71,8 +71,7 @@ if app_mode=='Image to Text':
  
   
   image_file =  st.file_uploader("Upload Images (less than 1mb)", type=["png","jpg","jpeg"])
-  
-  st.text("demo image")
+
   if image_file is not None:
     img = Image.open(image_file)
     st.image(image_file,width=250,caption='Uploaded image')

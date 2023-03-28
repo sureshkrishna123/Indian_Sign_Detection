@@ -71,6 +71,9 @@ if app_mode=='Image to Text':
  
     
   image_file =  st.file_uploader("Upload Images (less than 1mb)", type=["png","jpg","jpeg"])
+  image_file="data/A/101.jpg"
+  st.text("demo image")
+  st.image(image_file)
   if image_file is not None:
     img = Image.open(image_file)
     st.image(image_file,width=250,caption='Uploaded image')
@@ -78,7 +81,7 @@ if app_mode=='Image to Text':
     img.save(byte_io, 'PNG')#PNG
     image = byte_io.getvalue()
 
-
+  
   button_translate=st.button('Click me',help='To give the image')
   
   

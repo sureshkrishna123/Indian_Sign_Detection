@@ -62,7 +62,7 @@ if app_mode =='About Me':
                
 
 if app_mode=='Image to Text':
-  #st.image('ind.png'),use_column_width=True )
+  #st.image('sign.jpg'),use_column_width=True )
   st.title("Final year project")
   st.image('sign.jpg')
   st.header('Indian Sign Language Detection')
@@ -119,7 +119,7 @@ if app_mode=='Image to Text':
 if app_mode=='Image to Speech':
   #st.image('ind.png'),use_column_width=True )
   st.title("Final year project")
-  st.image('ind.png')
+  st.image('sign.jpg')
   st.header('Indian Sign Language Detection')
   st.markdown("Using CNN algorithm and googletrans, the hand sign images are classified and gives the audio as an output.")
   st.text("")
@@ -168,7 +168,7 @@ if app_mode=='Image to Speech':
 if app_mode=='Text to Image':
   #st.image('ind.png'),use_column_width=True )
   st.title("Final year project")
-  st.image('ind.png')
+  st.image('sign.jpg')
   st.header('Indian Sign Language Detection')
   st.markdown("Using CNN algorithm, the hand sign images are classified and gives the text as an output.")
   st.text("")
